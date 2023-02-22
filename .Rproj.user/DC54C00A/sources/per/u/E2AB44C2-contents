@@ -1,0 +1,7 @@
+install.packages("dailysum")
+library(dailysum)
+install.packages("test")
+test::day(2)
+library(devtools)
+library(roxygen2)
+check()

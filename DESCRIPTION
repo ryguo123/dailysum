@@ -1,0 +1,11 @@
+Package: dailysum
+Type: Package
+Title: to deal daily egg production data
+Version:0.1.0
+Author: guo ruiyang
+Maintainer:he package maintainer <yourself@somewhere.net>
+Description:for daily egg production, the package can disposal data to a special model and visualization
+License: GPL
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
