@@ -5,3 +5,22 @@ test::day(2)
 library(devtools)
 library(roxygen2)
 check()
+
+devtools::install_github("ryguo123/dailysum")
+dailysum::day()
+fileN <- readline(prompt = "文件储存位置: ")
+fileD <- readline(prompt = "文档初始位置 : ")
+
+cageNo <- c()
+done <- FALSE
+
+while (!done) {
+  x <- readline(prompt = "请输入鸡舍笼位 (输入 q 结束): ")
+  if (x == "q") {
+    done <- TRUE
+  } else {
+    cageNo <- c(cageNo, x)
+  }
+}
+cageNo<-as.numeric(cageNo)
+

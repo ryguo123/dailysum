@@ -11,6 +11,18 @@
 #' @examples
 day<-function(x){
   fileN <- readline(prompt = "输入文件名 : ")
+  fileD <- readline(prompt = "文件储存地址 : ")
+  cageNo <- c()
+  done <- FALSE
+  while (!done) {
+    x <- readline(prompt = "请输入鸡舍笼位 (输入 q 结束): ")
+    if (x == "q") {
+      done <- TRUE
+    } else {
+      cageNo <- c(cageNo, x)
+    }
+  }
+  cageNo<-as.numeric(cageNo)
   fileY <- unlist(strsplit(date()," "))[5]
   fileM <- as.numeric(unlist(strsplit(fileN,"[.]"))[1])
   if(fileM<9){
@@ -18,8 +30,6 @@ day<-function(x){
   }
 
   library(writexl)
-  fileD<-"C:\\Users\\Administrator\\Desktop\\ChanDan\\"
-  cageNo<-c(702,900,810,720,756,NA,NA,NA)
   fileDir<-paste0(fileD,fileY,"\\",fileM,"\\")
   inputN<-paste0(fileDir,fileN,".csv")
   input<-read.csv2(inputN,header=F,skip=1,sep = ",",stringsAsFactors=F)
@@ -253,3 +263,5 @@ day<-function(x){
     write_xlsx(sheets,paste0(fileDir,yearB,month,"错误数据总结表.xlsx"))
   }
 }
+print("------------------------------------- data has been deal --------------------------------------")
+print("--------------------------- all the data are store in C:\\Users\\Administrator\\Desktop\\chandan ---------------------------")
